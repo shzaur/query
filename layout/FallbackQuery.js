@@ -234,7 +234,9 @@ function addUnitAndHouseNumberAndStreet(vs) {
       must: [
         match_phrase('address_parts.unit', vs.var('input:unit')),
         match_phrase('address_parts.number', vs.var('input:housenumber')),
-        match('address_parts.street', vs.var('input:street'), {})
+        match('address_parts.street', vs.var('input:street'), {
+          'fuzziness': 'AUTO'
+        })
       ],
       should: [],
       filter: {
@@ -266,7 +268,9 @@ function addHouseNumberAndStreet(vs) {
       _name: 'fallback.address',
       must: [
         match_phrase('address_parts.number', vs.var('input:housenumber')),
-        match('address_parts.street', vs.var('input:street'), {})
+        match('address_parts.street', vs.var('input:street'), {
+          'fuzziness': 'AUTO'
+        })
       ],
       should: [],
       filter: {
@@ -298,7 +302,9 @@ function addStreet(vs) {
     bool: {
       _name: 'fallback.street',
       must: [
-        match('address_parts.street', vs.var('input:street'), {})
+        match('address_parts.street', vs.var('input:street'), {
+          'fuzziness': 'AUTO'
+        })
       ],
       should: [],
       filter: {

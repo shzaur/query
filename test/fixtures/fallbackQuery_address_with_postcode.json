@@ -20,7 +20,8 @@
                   {
                     "match": {
                       "address_parts.street": {
-                        "query": "street value"
+                        "query": "street value",
+                        "fuzziness": "AUTO"
                       }
                     }
                   }
@@ -68,7 +69,8 @@
                   {
                     "match": {
                       "address_parts.street": {
-                        "query": "street value"
+                        "query": "street value",
+                        "fuzziness": "AUTO"
                       }
                     }
                   }
