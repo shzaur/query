@@ -18,7 +18,7 @@
                     }
                   },
                   {
-                    "match_phrase": {
+                    "match": {
                       "address_parts.street": {
                         "query": "street value"
                       }
@@ -107,7 +107,7 @@
                 "boost": 17,
                 "must": [
                   {
-                    "match_phrase": {
+                    "match": {
                       "address_parts.street": {
                         "query": "street value"
                       }
